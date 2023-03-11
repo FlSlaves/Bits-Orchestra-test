@@ -1,21 +1,63 @@
 ﻿using Bits_Orchestra_test.Models;
+using Bits_Orchestra_test.Models.Data;
+using CsvHelper;
+using CsvHelper.Configuration;
+using CsvHelper.TypeConversion;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
 using System.Diagnostics;
+using System.Formats.Asn1;
+using System.Globalization;
+using System.Text;
 
 namespace Bits_Orchestra_test.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly AppDbContext appDbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(AppDbContext appDbContext)
         {
-            _logger = logger;
+            this.appDbContext = appDbContext;
         }
 
         public IActionResult Index()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            if (file == null || file.Length <= 0)
+            {
+                return BadRequest("File is required");
+            }
+
+            if (!Path.GetExtension(file.FileName).Equals(".csv", StringComparison.OrdinalIgnoreCase))
+            {
+                return BadRequest("Only CSV files are allowed");
+            }
+
+            var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                HasHeaderRecord = true,
+                Delimiter = ";",
+                
+            };
+            using (var reader = new StreamReader(file.OpenReadStream()))
+            using (var csv = new CsvReader(reader, configuration))
+            {
+                csv.Context.RegisterClassMap<ExcelMap>();
+                csv.Context.TypeConverterOptionsCache.GetOptions<bool>().BooleanTrueValues.Add("Yes");
+                csv.Context.TypeConverterOptionsCache.GetOptions<bool>().BooleanFalseValues.Add("No");
+                var records = csv.GetRecords<ExcelModel>().ToList();
+                await appDbContext.AddRangeAsync(records);
+                await appDbContext.SaveChangesAsync();
+
+            }
+            return Ok();
+
         }
 
         public IActionResult Privacy()
