@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body{
+        }
+        .sortorder:after {
+            content: '\25b2';
+        }
+
+        .sortorder.reverse:after {
+            content: '\25bc';
+        }
+        .divHead{
+            font-size:20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        b1{
+            background-color:darkslateblue;
+        }
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f1;
+            padding: 20px;
+        }
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=date], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <p class="divHead">List of Users</p>
+    <table cellpadding="12" class="table table-bordered table-hover" ng-init="GetAllData()">
+        <tr>
+            <td ng-click="sortBy('id')" >
+                <b>ID</b>
+                <span class="sortorder" ng-class="{reverse: reverse}" ng-show="propertyName === 'id'"></span>
+            </td>
+            <td ng-click="sortBy('name')">
+                <b>Name</b>
+                <span class="sortorder" ng-class="{reverse: reverse}" ng-show="propertyName === 'name'"></span>
+            </td>
+            <td ng-click="sortBy('dateOfBirth')">
+                <b>Date of Bitrh</b>
+                <span class="sortorder" ng-class="{reverse: reverse}" ng-show="propertyName === 'dateOfBirth'"></span>
+            </td>
+            <td ng-click="sortBy('isMarried')">
+                <b>Married</b>
+                <span class="sortorder" ng-class="{reverse: reverse}" ng-show="propertyName === 'isMarried'"></span>
+            </td>
+            <td ng-click="sortBy('phone')">
+                <b>Phone</b>
+                <span class="sortorder" ng-class="{reverse: reverse}" ng-show="propertyName === 'phone'"></span>
+            </td>
+            <td ng-click="sortBy('salary')">
+                <b>Salary</b>
+                <span class="sortorder" ng-class="{reverse: reverse}" ng-show="propertyName === 'salary'"></span>
+            </td>
+            <td width="16%">
+                <b>Action</b>
+            </td>
+        </tr>
+        <tr ng-repeat="r in records | orderBy:propertyName:reverse">
+            <td>{{r.id}}</td>
+            <td>{{r.name}}</td>
+            <td>{{r.dateOfBirth}}</td>
+            <td>{{r.isMarried}}</td>
+            <td>{{r.phone}}</td>
+            <td>{{r.salary}}</td>
+            <td>
+                <button class="w3-btn w3-ripple btn btn-success" ng-click="editRecord(r)">&#9998; Edit</button>
+                <button class="w3-btn w3-ripple btn btn-danger" ng-click="DeleteRecord(r)">&#9003; Delete</button>
+            </td>
+        </tr>
+    </table>
+    <button class="btn w3-btn btn-success w3-ripple" ng-click="createRecord()">&#333; Create new Record</button>
+    <form ng-hide="hideform" ng-submit="AddRecord(name, dateOfBirth, isMarried, phone, salary)">
+        <br />
+        <label>Name:</label>
+        <input class="w3-input w3-border" type="text" ng-model="name" placeholder="Name" required ng-pattern="/^[a-zA-Z]+$/">
+        <div ng-show="name.$error.pattern">Введені дані мають містити тільки літери</div>
+        <br>
+        <label>Date Of Birth:</label>
+        <input class="w3-input w3-border" type="date" ng-model="dateOfBirth" placeholder="DateOfBirth" required>
+        <br>
+        <label>Married:</label>
+        <input class="w3-input w3-border" type="text" ng-model="isMarried" ng-pattern="/^(true|false)$/i" placeholder="Married">
+        <br>
+        <label>Phone:</label>
+        <input class="w3-input w3-border" type="text" ng-model="phone" placeholder="Phone">
+        <br>
+        <label>Salary:</label>
+        <input class="w3-input w3-border" type="text" ng-model="salary" placeholder="Salary" required>
+        <br />
+        <button class="btn-success button" type="submit" ng-show="create">Save</button>
+        <input type="button" value="Update" ng-click="UpdateRecord(name, dateOfBirth, isMarried, phone, salary)" class=" btn-success button" ng-show="update" />
+        <input type="button" value="Cancel" class=" btn-secondary button" ng-click="cancelRecord()">
+    </form>
+</body>
+</html>

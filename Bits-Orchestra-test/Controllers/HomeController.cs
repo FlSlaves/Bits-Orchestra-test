@@ -5,7 +5,6 @@ using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OfficeOpenXml;
 using System.Diagnostics;
 using System.Formats.Asn1;
 using System.Globalization;
@@ -56,8 +55,7 @@ namespace Bits_Orchestra_test.Controllers
                 await appDbContext.SaveChangesAsync();
 
             }
-            return Ok();
-
+            return View();
         }
 
         public IActionResult Privacy()

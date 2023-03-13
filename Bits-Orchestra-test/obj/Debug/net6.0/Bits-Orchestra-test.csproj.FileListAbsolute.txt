@@ -16,9 +16,6 @@ C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\ne
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Bits-Orchestra-test.pdb
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Azure.Core.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Azure.Identity.dll
-C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\EPPlus.dll
-C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\EPPlus.Interfaces.dll
-C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\EPPlus.System.Drawing.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
@@ -45,7 +42,6 @@ C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\ne
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\Mono.TextTemplating.dll
@@ -55,7 +51,6 @@ C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\ne
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\System.Memory.Data.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\System.Runtime.Caching.dll
-C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\System.Security.Permissions.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\System.Text.Encodings.Web.dll
@@ -67,11 +62,7 @@ C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\ne
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
@@ -87,3 +78,6 @@ C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\obj\Debug\ne
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\obj\Debug\net6.0\Bits-Orchestra-test.genruntimeconfig.cache
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\obj\Debug\net6.0\ref\Bits-Orchestra-test.dll
 C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\CsvHelper.dll
+C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Acer\Desktop\start\Bits-Orchestra-test\Bits-Orchestra-test\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

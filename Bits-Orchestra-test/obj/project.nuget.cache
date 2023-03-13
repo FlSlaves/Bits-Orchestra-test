@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wlD5PzSFk3ueNshBRTqfBJw3Eq+7dkmxio9DepIQL/N7XMQsUxJS+Q/jttsm3fab0Egiz5l9GMWaZ3el2kl92A==",
+  "dgSpecHash": "JphsZS7zXZtz0WvPApbZ80QssBYCbuM0P5SqBxYhhcVZSyGu4dHRq9pDe9Vk/vnVfFNyzZ54sUwy53uXFZRKcQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Acer\\Desktop\\start\\Bits-Orchestra-test\\Bits-Orchestra-test\\Bits-Orchestra-test.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Acer\\.nuget\\packages\\angularjs.core\\1.8.2\\angularjs.core.1.8.2.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
