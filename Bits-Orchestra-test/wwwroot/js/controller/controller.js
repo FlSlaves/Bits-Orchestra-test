@@ -13,45 +13,52 @@ app.controller("myCtrl", function ($scope, $http) {
     $scope.hideform = true;
     //Create New User
     $scope.AddRecord = function (name, dateOfBirth, isMarried, phone, salary) {
-        let married = (isMarried == 'true' ? true : false);
-        $http({
-            method: 'POST',
-            url: 'https://localhost:7105/api/excel/createrecord',
-            data: {
-                Name: name,
-                DateOfBirth: dateOfBirth,
-                isMarried: married,
-                Phone: phone,
-                Salary: salary
-            }
-        }).then(function successCallback(response) {
-            $scope.records.push(response.data);
-            $scope.GetAllData();
-            alert("Record has created Successfully")
-        }, function errorCallback(response) {
-            alert("Error. while created record Try Again!");
-        });
-
+        if (salary != undefined) {
+            $http({
+                method: 'POST',
+                url: 'https://localhost:7105/api/excel/createrecord',
+                data: {
+                    Name: name,
+                    DateOfBirth: dateOfBirth,
+                    isMarried: isMarried,
+                    Phone: phone,
+                    Salary: salary
+                }
+            }).then(function successCallback(response) {
+                $scope.records.push(response.data);
+                $scope.GetAllData();
+                alert("Record has created Successfully")
+            }, function errorCallback(response) {
+                alert("Error. while created record Try Again!");
+            });
+        }
+        else {
+            alert("Error. while updating user Try Again!");
+        };
     };
 
     $scope.UpdateRecord = function (name, dateOfBirth, isMarried, phone, salary) {
-        let married = (isMarried == 'true' ? true : false);
-        $http({
-            method: "put",
-            url: "https://localhost:7105/api/excel/updaterecord/" + $scope.record.id,
-            data: {
-                Name: name,
-                DateOfBirth: dateOfBirth,
-                isMarried: married,
-                Phone: phone,
-                Salary: salary
-            }
-        }).then(function successCallback(response) {
-            alert("User has updated Successfully")
-            $scope.GetAllData();
-        }, function errorCallback(response) {
+        if (salary != undefined) {
+            $http({
+                method: "put",
+                url: "https://localhost:7105/api/excel/updaterecord/" + $scope.record.id,
+                data: {
+                    Name: name,
+                    DateOfBirth: dateOfBirth,
+                    isMarried: isMarried,
+                    Phone: phone,
+                    Salary: salary
+                }
+            }).then(function successCallback(response) {
+                alert("User has updated Successfully")
+                $scope.GetAllData();
+            }, function errorCallback(response) {
+                alert("Error. while updating user Try Again!");
+            });
+        }
+        else {
             alert("Error. while updating user Try Again!");
-        });
+        };
     }
     $scope.DeleteRecord = function (record) {
         //$http DELETE function

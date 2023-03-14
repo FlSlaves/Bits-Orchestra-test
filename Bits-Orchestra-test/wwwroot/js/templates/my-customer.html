@@ -49,16 +49,17 @@
             padding: 20px;
         }
         input[type=text], select {
-            width: 100%;
+            width: 50%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+         
         }
         input[type=date], select {
-            width: 100%;
+            width: 50%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
@@ -66,6 +67,7 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
+        
     </style>
 </head>
 <body>
@@ -114,23 +116,35 @@
         </tr>
     </table>
     <button class="btn w3-btn btn-success w3-ripple" ng-click="createRecord()">&#333; Create new Record</button>
-    <form ng-hide="hideform" ng-submit="AddRecord(name, dateOfBirth, isMarried, phone, salary)">
+    <form name="myForm" ng-hide="hideform" ng-submit="AddRecord(name, dateOfBirth, isMarried, phone, salary)">
         <br />
-        <label>Name:</label>
-        <input class="w3-input w3-border" type="text" ng-model="name" placeholder="Name" required ng-pattern="/^[a-zA-Z]+$/">
-        <div ng-show="name.$error.pattern">Введені дані мають містити тільки літери</div>
+        <b>Name:</b>
+        <input class="w3-input w3-border" type="text" name="name" ng-model="name" placeholder="Name" required ng-pattern="/^[a-zA-Z]+$/">
+        <div ng-show="myForm.name.$error.pattern">
+            Only Latin is allowed
+        </div>
         <br>
-        <label>Date Of Birth:</label>
+        <b>Date Of Birth:</b>
         <input class="w3-input w3-border" type="date" ng-model="dateOfBirth" placeholder="DateOfBirth" required>
         <br>
-        <label>Married:</label>
-        <input class="w3-input w3-border" type="text" ng-model="isMarried" ng-pattern="/^(true|false)$/i" placeholder="Married">
+        <b>Married:</b>
+        <label>
+            <input name="isMarried" type="radio" ng-model="isMarried" ng-value="true" required>
+            Yes
+        </label>
+        <label>
+            <input name="isMarried" type="radio" ng-model="isMarried" ng-value="false" required>
+            No
+        </label>
+        <br />
+        <div ng-show="myForm.isMarried.$error.required && myForm.$submitted">Please, select option</div>
+        <b>Phone:</b>
+        <input name="phone" class="w3-input w3-border" type="tel" ng-pattern="/^\+?\d{1,4}\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/" ng-model="phone" placeholder="+380XXXXXXXXX">
+        <div ng-show="myForm.phone.$error.pattern">Input correct phone number with international code (for example, +380445371428)</div>
         <br>
-        <label>Phone:</label>
-        <input class="w3-input w3-border" type="text" ng-model="phone" placeholder="Phone">
-        <br>
-        <label>Salary:</label>
-        <input class="w3-input w3-border" type="text" ng-model="salary" placeholder="Salary" required>
+        <b>Salary:</b>
+        <input name="salary" class="w3-input w3-border" type="text" ng-model="salary" ng-pattern="/^[1-9]\d{0,}$/" placeholder="Salary" required>
+        <div ng-show="myForm.salary.$error.pattern">Only numbers are allowed</div>
         <br />
         <button class="btn-success button" type="submit" ng-show="create">Save</button>
         <input type="button" value="Update" ng-click="UpdateRecord(name, dateOfBirth, isMarried, phone, salary)" class=" btn-success button" ng-show="update" />
